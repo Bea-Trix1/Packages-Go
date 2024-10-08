@@ -1,0 +1,12 @@
+Como iniciar um module no projeto
+
+1 - Na pasta do projeto, abrir o terminal.
+
+    Digitar: go mod init - e a URl do projeto, sem https. 
+    Exemplo: go mod init github.com/Bea-Trix1/Golang
+
+2 - Para importar pacotes, abra o terminal e digite:
+    go get - e a url do pacote que você quer importar para o projeto
+    Exemplo: go get pkg.go.dev/golang.org/x/tour@latest
+
+    Nota: Sempre utilizar no final da url o @ apontando para qual versão vc quer importar, igual ao exemplo acima.

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Template</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <header>
+        <h1>Cursos</h1>
+        <nav>
+            <ul>
+                <li><a href='#'>Home</a></li>
+                <li><a href='#'>Sobre</a></li>
+                <li><a href='#'>Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Cursos</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Horas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range .}}
+                    <tr>
+                        <td>{{.Nome}}</td>
+                        <td>{{.CargaHoraria}}</td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido por <a href='#'>Beatriz Ferrante</a></p>
+    </footer>
+</body>
+</html>
