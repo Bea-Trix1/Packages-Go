@@ -7,18 +7,19 @@ import (
 )
 
 func main() {
-	c := http.Client{Timeout: time.Duration(1) * time.Second} // Aqui eu crio um cliente http, que é um objeto que me permite fazer requisições http
-	resp, err := c.Get("http://google.com")                   // Aqui eu faço uma requisição http para o google
-	if err != nil {
-		panic(err) // Se houver um erro, eu paro a execução do programa
-	}
-
-	defer resp.Body.Close() // Aqui eu fecho o corpo da resposta, para que não haja vazamento de memória
-
-	body, err := io.ReadAll(resp.Body) // Aqui eu leio o corpo da resposta
+	c := http.Client{Timeout: time.Duration(1) * time.Second} // crio um cliente http, com timeout de 1 segundo
+	resp, err := c.Get("http://google.com")                   // faço uma requisição http para o google
 	if err != nil {
 		panic(err)
 	}
 
-	println(string(body)) // Aqui eu imprimo o corpo da resposta
+	defer resp.Body.Close() // fecho o corpo da resposta
+
+	body, err := io.ReadAll(resp.Body) // leio o corpo da resposta com io.ReadAll
+	if err != nil {
+		panic(err)
+	}
+
+	println(string(body))
+
 }
