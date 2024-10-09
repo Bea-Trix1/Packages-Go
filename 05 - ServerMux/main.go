@@ -6,7 +6,7 @@ func main() {
 	mux := http.NewServeMux() // Cria um novo servidor mux ele serve para criar rotas e handlers
 
 	http.HandleFunc("/", helloHandler) // Cria uma rota para a raiz do site
-	http.Handle("/ola", &ola{"Oi"})    //	Cria uma rota para /ola e passa um handler para ela
+	http.Handle("/ola", &ola{"Oi"})    //	Cria uma rota para /ola e passa uma struct com o texto "Oi"
 	http.ListenAndServe(":8080", mux)  // Inicia o servidor na porta 8080
 }
 

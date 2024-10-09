@@ -7,7 +7,7 @@ import (
 
 type Conta struct {
 	Numero int `json:"numero"` // Aqui eu defino o nome do campo no JSON
-	Saldo  int `json:"saldo"`
+	Saldo  int `json:"saldo"`  // Isso se chamam tags, e são utilizadas para definir o nome do campo no JSON
 }
 
 func main() {
