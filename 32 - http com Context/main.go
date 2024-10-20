@@ -13,9 +13,9 @@ import (
 // O http.NewRequestWithContext é uma função que cria uma nova requisição, passando o contexto, o método, a URL e o corpo da requisição
 // Uma analogia para o contexto é o cancelamento de uma requisição, se você está fazendo uma requisição e ela está demorando muito, você pode cancelar essa requisição
 func main() {
-	ctx := context.Background()
-	ctx, cancel := context.WithTimeout(ctx, time.Microsecond)
-	defer cancel()
+	ctx := context.Background()                               // Cria um contexto vazio
+	ctx, cancel := context.WithTimeout(ctx, time.Microsecond) // Cancela a requisição após 1 microsegundo
+	defer cancel()                                            // Cancela a requisição após a execução da função
 
 	req, err := http.NewRequestWithContext(ctx, "GET", "http://google.com", nil)
 	if err != nil {
